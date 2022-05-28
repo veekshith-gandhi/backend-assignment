@@ -1,8 +1,12 @@
 /** @format */
 
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 
-const LocationSchema = new mongoos.Schema({
-  restaurantId: { type: String, required: true },
+const LocationSchema = new mongoose.Schema({
+  restaurantId: { type: mongoose.Schema.Types.ObjectId, required: true },
   location: { type: String },
 });
+
+const Locations = mongoose.model("locations", LocationSchema);
+
+module.exports = Locations;

@@ -1,9 +1,12 @@
 /** @format */
 
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 
-const CategorySchema = new mongoos.Schema({
-  restaurantId: { type: String },
-  dishId: { type: String },
+const CategorySchema = new mongoose.Schema({
+  restaurantId: { type: mongoose.Schema.Types.ObjectId },
   category: { type: String },
 });
+
+const Category = mongoose.model("categories", CategorySchema);
+
+module.exports = Category;
