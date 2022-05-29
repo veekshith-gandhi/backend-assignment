@@ -4,10 +4,7 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
   {
-    cart: [
-      { product: { type: mongoose.Schema.Types.ObjectId, ref: "Product" } },
-      { quantity: { type: Number, default: 1 } },
-    ],
+    cart: { product: { type: mongoose.Schema.Types.ObjectId, ref: "Product" } },
     name: { type: String },
     isAdmin: { type: Boolean, default: false },
     details: { type: Object },
