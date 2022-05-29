@@ -10,6 +10,7 @@ const locationRouter = require("./routes/location.routes");
 const categoryRouter = require("./routes/category.routes");
 const disheRouter = require("./routes/dishes.routes");
 const cartRouter = require("./routes/cart.routes");
+const orderRouter = require("./routes/order.routes");
 
 app.use(express.json());
 
@@ -18,6 +19,7 @@ app.use("/api/location", locationRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/dishe", disheRouter);
 app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.use("/", (req, res) => {
   return res.send("Hello API");

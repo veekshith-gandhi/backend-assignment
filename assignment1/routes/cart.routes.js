@@ -1,7 +1,9 @@
 /** @format */
 
-const route = require("express").Router();
+const updateToCart = require("../controller/cart.controller");
 
-route.post("/");
+const router = require("express").Router();
 
-module.exports = route;
+router.post("/", updateToCart);
+
+module.exports = router;
