@@ -4,8 +4,6 @@
 
 Simple food ordering website Using NodeJS and MongoDB.
 
-Live Demo [here](google.com).
-
 ## Technology and Modules used for this Project
 
 1. Node JS Express Framework is used as a building Backend part of this Website.
