@@ -4,15 +4,15 @@ const Locations = require("../models/location.model");
 
 const addLocation = async (req, res) => {
   try {
-    const name = await Locations.create({
-      restaurantId: req.body.restaurantId,
-      location: req.body.location,
+    const result = await Locations.create({
+      locationName: req.body.locationName,
+      restaurant: req.body.restaurant,
     });
-    if (name) return res.status(201).send({ msg: "created" });
-    return res.status(401).send({ msg: "Not created" });
+    if (result) return res.status(201).send({ msg: result });
+    return res.status(401).send({ msg: "something went wrong" });
   } catch (error) {
-    return res.status(401).send({ msg: "Something went wrong", error });
+    return res.status(501).send({ msg: "something went wrong" });
   }
 };
 
-module.exports = { addLocation };
+module.exports = addLocation;

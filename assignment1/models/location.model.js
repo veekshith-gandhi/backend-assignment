@@ -3,12 +3,12 @@
 const mongoose = require("mongoose");
 
 const LocationSchema = new mongoose.Schema({
-  restaurantId: {
-    type: mongoose.Schema.Types.ObjectId,
+  locationName: { type: String, trim: true, required: true },
+  restaurant: {
+    type: String,
+    trim: true,
     required: true,
-    ref: "Restaurant",
   },
-  location: { type: String },
 });
 
 const Locations = mongoose.model("locations", LocationSchema);
